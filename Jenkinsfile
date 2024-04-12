@@ -8,12 +8,11 @@ tools{nodejs "nodejs"}
         sh 'npm i'
       }
     }
-  stages{
     stage('e2e tests'){
       steps{
         sh 'npm run cy.run'
-      }
-    }    
+    }
+    }
     
   }
 }
