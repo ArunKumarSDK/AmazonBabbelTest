@@ -52,3 +52,9 @@ OpenHRM Automation using Cypress for TIERIV by Arun
 **Input:** Valid username and empty password field.
 
 **Expected Result:** User should not be able to log in and should receive an error message indicating the password field is required.
+
+**6. Reset Password - Confirm reset password link:**
+
+**Input:** Go to login page -> Enter Username -> Click on reset password btn -> 
+
+**Expected Result:** User should be able see - 'Reset Password link sent successfully' .
