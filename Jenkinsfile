@@ -10,7 +10,7 @@ tools {nodejs "nodejs"}
     }
     stage('e2e tests'){
       steps{
-        bat 'npm run cy.run'
+        bat 'npm run cy.cloudy'
     }
     }
     
