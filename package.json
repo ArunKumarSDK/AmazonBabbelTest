@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy.run": "npx cypress run",
-    "cy.cloudy": "npx cypress run --record --key 47d063bd-6b89-4c62-9a67-3bf6965469c0"
+    "cy.electron": "npx cypress run --record --key 47d063bd-6b89-4c62-9a67-3bf6965469c0 --browser electron",
+    "cy.chrome": "npx cypress run --record --key 47d063bd-6b89-4c62-9a67-3bf6965469c0 --browser chrome",
+    "cy.firefox": "npx cypress run --record --key 47d063bd-6b89-4c62-9a67-3bf6965469c0 --browser firefox"
   },
   "author": "Arun Kumar",
   "license": "ISC",
