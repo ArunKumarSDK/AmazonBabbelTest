@@ -12,6 +12,8 @@ OpenHRM Automation using Cypress for TIERIV by Arun
 ### About Framework
 - Page Object Model
 - Data Driven testing
+- Supports Cypress Cloud
+- CICD using Jenkins
 
 ### Setup Details
 - Clone the project 
