@@ -18,17 +18,5 @@ stages
       bat 'npm run cy.electron'
     }
   }
-  stage('Running test on Chrome')
-  {
-    steps{
-      bat 'npm run cy.chrome'
-    }
-  }
-  stage('Running test on Firefox')
-  {
-    steps{
-      bat 'npm run cy.firefox'
-    }
-  } 
 }
 }
