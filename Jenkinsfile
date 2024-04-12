@@ -1,4 +1,5 @@
 pipeline{
+  
   agent any
 
 tools {
@@ -6,16 +7,25 @@ tools {
   }
 stages
 {
-  stage('dependencies')
+  stage('Build')
   {
     steps{
+      echo 'Installing & Initializing NPM '
       bat 'npm i'
     }
   }
-  stage('Running test on Electron')
+  stage('Test on Electron')
   {
     steps{
+      echo 'Executing tests on Electron browser'
       bat 'npm run cy.electron'
+    }
+  }
+    stage('Test on Chrome')
+  {
+    steps{
+      echo 'Executing tests on Chrome browser'
+      bat 'npm run cy.chrome'
     }
   }
 }
