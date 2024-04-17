@@ -4,10 +4,6 @@ pipeline{
       string(name: 'SPEC', defaultValue: 'cypress/e2e/**/**', description: "Enter the script path to execute")
       choice(name: 'BROWSER', choices: ['chrome', 'elecron', 'firefox'], description: 'Pick the web browser you want to use to run your scripts')
   }
-  
- options {
-    ansiColor('xterm')
- }  
 tools {
   nodejs "nodejs"
   }
