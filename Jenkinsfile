@@ -14,18 +14,18 @@ tools {
 stages
 {
   stage('Building){
-      echo '--------****Building the application****-----------'
+      echo 'Building the application'
   }
   stage('Testing')
   {
     steps{
-      echo '--------****Installing & Initializing NPM****-----------'
+      echo 'Installing & Initializing NPM'
       bat 'npm i'
       bat 'npm run cy.run -browser ${BROWSER} --spec ${SPEC}'
     }
   }
   stage('Deploying){
-      echo '--------****Deploying the application****-----------'
+      echo 'Deploying the application'
   }
  post{
    always{
