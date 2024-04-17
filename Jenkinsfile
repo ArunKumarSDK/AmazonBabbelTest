@@ -14,7 +14,9 @@ tools {
 stages
 {
   stage('Building){
+    steps{
       echo 'Building the application'
+    }
   }
   stage('Testing')
   {
@@ -25,7 +27,9 @@ stages
     }
   }
   stage('Deploying){
+    steps{    
       echo 'Deploying the application'
+    }
   }
  post{
    always{
