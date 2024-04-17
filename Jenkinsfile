@@ -13,22 +13,22 @@ tools {
   }
 stages
 {
-  stage('Building){
+  stage('Building'){
     steps{
-      echo 'Building the application'
+      echo "Building the application"
     }
   }
   stage('Testing')
   {
     steps{
-      echo 'Installing & Initializing NPM'
+      echo "Running tests"
       bat 'npm i'
       bat 'npm run cy.run -browser ${BROWSER} --spec ${SPEC}'
     }
   }
-  stage('Deploying){
+  stage('Deploying'){
     steps{    
-      echo 'Deploying the application'
+      echo "Deploying the application"
     }
   }
  post{
