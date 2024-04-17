@@ -1,32 +1,36 @@
 pipeline{
-  
   agent any
-
+  parameters {
+      string(name: 'SPEC', defaultValue: 'cypress/e2e/**/**', description: "Enter the script path to execute")
+      choice(name: 'BROWSER', choices: ['chrome', 'elecron', 'firefox'], description: 'Pick the web browser you want to use to run your scripts')
+  }
+  
+ options {
+    ansiColor('xterm')
+ }  
 tools {
   nodejs "nodejs"
   }
 stages
 {
-  stage('Build')
+  stage('Building){
+      echo '--------****Building the application****-----------'
+  }
+  stage('Testing')
   {
     steps{
-      echo 'Installing & Initializing NPM '
+      echo '--------****Installing & Initializing NPM****-----------'
       bat 'npm i'
+      bat 'npm run cy.run -browser ${BROWSER} --spec ${SPEC}'
     }
   }
-  stage('Test on Electron')
-  {
-    steps{
-      echo 'Executing tests on Electron browser'
-      bat 'npm run cy.electron'
-    }
+  stage('Deploying){
+      echo '--------****Deploying the application****-----------'
   }
-    stage('Test on Chrome')
-  {
-    steps{
-      echo 'Executing tests on Chrome browser'
-      bat 'npm run cy.chrome'
-    }
-  }
+ post{
+   always{
+     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
+   }
+ }
 }
 }
