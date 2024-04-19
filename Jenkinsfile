@@ -31,6 +31,7 @@ stages
 }
  post{
    always{
+     publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '\\cypress\\reports\\html', reportFiles: 'index.html', reportName: 'Cypress Report', reportTitles: '', useWrapperFileDirectly: true])
      echo "Testing is finished"
    }
  }
