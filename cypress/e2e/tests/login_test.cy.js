@@ -51,6 +51,7 @@ describe("Login functionality validations", () => {
           .emptyPasswordFieldMsg()
           .should("have.text", "Required");
       });
+    });
 
     describe("Reset Password", () => {      
       it("should be able to reset password", () => {
@@ -72,6 +73,5 @@ describe("Login functionality validations", () => {
           .should("be.visible")
           .and("have.text", "Reset Password link sent successfully");
       });      
-    });
   });
 });
