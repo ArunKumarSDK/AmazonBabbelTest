@@ -19,6 +19,7 @@ stages
     steps{
       echo "Running tests"
       bat 'npm i'
+      bat 'npm i --save-dev cypress-mochawesome-reporter'
       bat 'npm run cy.run -browser ${BROWSER} --spec ${SPEC}'
     }
   }
